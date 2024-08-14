@@ -1,0 +1,204 @@
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ user-select: none;
+ -webkit-tap-highlight-color: transparent;
+}
+:root {
+ --background-color: #222;
+ --dark-1: #333;
+ --dark-5: #555;
+ --dark-10: #777;
+ --text-color: #aaa;
+
+ --text-size: clamp(15px, 3vw, 20px);
+}
+body {
+ height: 100svh;
+ background: var(--background-color);
+ color: var(--text-color);
+ font-size: var(--text-size);
+ font-family: "roboto";
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+button {
+ background: transparent;
+ color: var(--text-color);
+ cursor: pointer;
+ position: relative;
+}
+button:focus,
+button:hover {
+ outline: none;
+ transform: scale(1.1);
+ transition: transform 100ms linear;
+}
+
+.box {
+ box-shadow: -3px -3px 5px var(--dark-1), 3px 3px 5px black;
+ border: none;
+}
+
+.container {
+ max-width: 1000px;
+ height: 100%;
+}
+.container > div {
+ height: 100%;
+}
+
+.home {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+}
+.stuff {
+ font-family: "fat-font";
+ text-align: center;
+ color: var(--dark-5);
+}
+.mode-describtion {
+ max-width: 50%;
+ color: var(--dark-10);
+ text-align: center;
+}
+.option {
+ width: 15em;
+ border-radius: 0.5em;
+ padding-block: 1.5em;
+ margin-block: 1.5em;
+ display: block;
+}
+.icons-container {
+ width: 100%;
+ padding-inline: 10%;
+ display: flex;
+ justify-content: space-between;
+}
+.icons-container > button {
+ width: 2em;
+ aspect-ratio: 1;
+ font-size: 2rem;
+ border-radius: 50%;
+}
+
+.level-container {
+ display: none;
+ flex-direction: column;
+ justify-content: space-between;
+}
+.nav {
+ height: 5%;
+ /* background: gray; */
+ padding: 1em 0.5em 0 0.5em;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.back {
+ width: 1.5em;
+ aspect-ratio: 1;
+ background: transparent;
+ transform: rotate(-45deg);
+ border: none;
+ border-left: 0.3em solid var(--text-color);
+ border-top: 0.3em solid var(--text-color);
+}
+.heart {
+ width: 1.5em;
+ aspect-ratio: 1;
+ background: orangered;
+ /* border-radius: 0.3em; */
+ margin-left: 0.5em;
+ display: inline-block;
+ transform: rotate(45deg);
+}
+.heart::before {
+ content: "";
+ width: 50%;
+ aspect-ratio: 1;
+ background: var(--background-color);
+ /* border-bottom-right-radius: 5%; */
+ display: block;
+ transform: translate(-1px, -1px);
+}
+section {
+ height: 33%;
+ text-align: center;
+ text-transform: capitalize;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.question {
+ font-family: "persian";
+}
+.keyboard {
+ display: grid;
+ grid-template-columns: repeat(20, minmax(auto, 0.8em));
+ grid-auto-rows: minmax(auto, 2.5em);
+ gap: 0.5em 0.5em;
+}
+.key {
+ background: hsl(var(--hue, 0), var(--saturation, 0%), calc(var(--hover-lightness, 0%) + var(--lightness, 30%)));
+ color: var(--color);
+ font-size: inherit;
+ border-radius: 0.3em;
+ border: none;
+ text-transform: uppercase;
+ cursor: pointer;
+ grid-column: span 2;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.ent,
+.del {
+ grid-column: span 3;
+}
+.space-bar {
+ grid-column: span 14;
+}
+.key:hover,
+.key:focus {
+ --hover-lightness: 10%;
+}
+.notActive {
+ display: none;
+}
+
+.settings-container {
+ display: none;
+}
+.options {
+ width: 15em;
+ height: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.options > button {
+ padding: 0.5em 2em;
+}
+.settings-back {
+ position: absolute;
+ top: 1em;
+}
+
+@font-face {
+ font-family: "roboto";
+ src: url(fonts/roboto/Roboto-Regular.ttf);
+}
+@font-face {
+ font-family: "persian";
+ src: url(fonts/persian/IBMPlexSansArabic-Regular.ttf);
+}
+@font-face {
+ font-family: "fat-font";
+ src: url(fonts/fat/RubikDoodleShadow-Regular.ttf);
+}
