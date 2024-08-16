@@ -29,7 +29,7 @@ const EnglishWords = [
  "these",
  "are",
  "favorite",
- "cookies",
+ "cookie",
  "goodbye",
  ["see", "look"],
  "you",
